@@ -21,8 +21,6 @@ int main() {
             ma = A[i];
     }
     
-    //_left = 0;
-    //_right = MAX_A;
     _left = mi;
     _right = ma;
 
