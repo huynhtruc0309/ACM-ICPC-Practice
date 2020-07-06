@@ -1,5 +1,6 @@
 # BINARY SEARCH TREE
 ## 0. Khai báo cấu trúc một node trong BST
+#### Độ phức tạp: O(1)
 ### C++
 ```
 struct Node
@@ -18,6 +19,7 @@ class Node:
         self.right = None
 ```
 ## 1. Tạo một node mới
+#### Độ phức tạp: O(1)
 ### C++
 ```
 Node* createNode(int x)
@@ -36,6 +38,7 @@ def createNode(x):
     return newNode
 ```
 ## 2. Chèn một giá trị mới vào BST
+#### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
 ```
 Node* createNode(Node* root, int x)
@@ -61,6 +64,7 @@ def insertNode(root, x):
     return root
 ```
 ## 3. Tạo Binary Search Tree
+#### Độ phức tạp: O(N*h) với h là chiều cao cây
 ### C++
 ```
 void createTree(Node* &root, int a[], int n)
@@ -78,6 +82,7 @@ def createTree(a, n):
     return root
 ```
 ## 4. Tìm kiếm một giá trị trong BST
+#### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
 ```
 Node* searchNode(Node *root, int x)
@@ -99,6 +104,7 @@ def searchNode(root, x):
     return searchNode(root.right, x)
 ```
 ## 5. Xóa một giá trị trong BST
+#### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
 ```
 Node* deleteNode(Node* &root, int x)
@@ -168,4 +174,160 @@ def minValueNode(node):
     while current.left != None:
         current = current.left
     return current
+```
+# Các hàm khác liên quan Binary Search Tree
+## 6. Duyệt Binary Search Tree
+#### Độ phức tạp: O(N)
+### C++
+```
+void traversalTree(Node *root)
+{
+    if (root != NULL)
+    {
+        traversalTree(root->left);
+        cout << root->key << " ";
+        traversalTree(root->right);
+    }
+}
+```
+### Python
+```
+def traversalTree(root):
+    if root != None:
+        traversalTree(root.left)
+        print(root.key, end = ' ')
+        traversalTree(root.right)
+```
+## 7. Tính kích thước của BST
+#### Độ phức tạp: O(N)
+### C++
+```
+int size(Node *node)
+{
+    if (node == NULL)
+        return 0;
+    else
+        return (size(node->left) + 1 + size(node->right));
+}
+```
+### Python
+```
+def size(root):
+    if root == None:
+        return 0
+    return size(root.left) + 1 + size(root.right)
+```
+## 8. Xoá Binary Search Tree
+#### Độ phức tạp: O(N)
+### C++
+```
+void deleteTree(Node* root)
+{
+    if (root == NULL)
+        return;
+    deleteTree(root->left);
+    deleteTree(root->right);
+    delete(root);
+}
+```
+### Python
+```
+def deleteTree(root):
+    if root == None:
+        return
+    deleteTree(root.left)
+    deleteTree(root.right)
+    del root
+```
+# Sử dụng Binary Search Tree bằng thư viện
+## Cách sử dụng set và map
+### C++
+```
+#include <set>
+using namespace std;
+
+int a[] = {10, 70, 20, 90, 50};
+set<int> s(a, a + 5);
+
+//Thêm phần tử
+s.insert(60);
+
+//Tìm phần tử
+set<int>::iterator it;
+it = s.find(50);
+if (it != s.end())
+    cout << "found";
+else
+    cout << "not found";
+
+//Xoá phần tử
+s.erase(20);
+```
+```
+#include <map>
+using namespace std;
+
+map<int, string> m;
+m[10] = "abc";
+m[20] = "def";
+m[10] = "mpk";
+
+//Thêm phần tử
+pair<int, string> p(14, "abc");
+m.insert(p);
+
+//Tìm phần tử
+map<int, string>::iterator it;
+it = m.find(20);
+if (it != m.end())
+    cout << "found";
+else
+    cout << "not found";
+
+//Xoá phần tử
+m.erase(14);
+```
+## Hàm tìm cận dưới
+```
+set <int>::iterator it;
+it = s.lower_bound(29);
+cout << *it;
+```
+```
+map<int, string>::iterator it;
+it = s.lower_bound(14);
+cout << it->first << " " << it->second;
+```
+## Hàm tìm cận trên >
+```
+set <int>::iterator it;
+it = s.upper_bound(29);
+cout << *it;
+```
+```
+map<int, string>::iterator it;
+it = s.upper_bound(14);
+cout << it->first << " " << it->second;
+```
+## Duyệt các phần tử của set và map
+```
+set<int>::iterator it;
+for (it = s.begin(); it != s.end(); it++)
+    cout << *it << ", ";
+```
+```
+map<int, string>::iterator it;
+for (it = m.begin(); it != m.end(); it++)
+    cout << it->first << " " << it->second << ", ";
+```
+## Duyệt ngược các phần tử của set và map
+```
+set<int>::reverse_iterator it;
+for (it = s.rbegin(); it != s.rend(); it++)
+    cout << *it << ", ";
+```
+```
+map<int, string>::reverse_iterator it;
+for (it = m.rbegin(); it != m.rend(); it++)
+    cout << it->first << " " << it->second << ", ";
 ```
