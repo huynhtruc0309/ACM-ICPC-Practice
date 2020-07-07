@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#define MAX 10
+#define MAX 50
 struct Node {
     struct Node *child[MAX];
     bool check;
@@ -24,7 +24,7 @@ bool addWord(struct Node *root, string s)
     struct Node *temp = root;
     for (int i = 0; i < s.size(); i++)
     {
-        ch = s[i] - '0';
+        ch = s[i] - 'a';
         if (temp->child[ch] == NULL)
         {
             temp->child[ch] = newNode();
@@ -37,36 +37,26 @@ bool addWord(struct Node *root, string s)
     for (int i = 0; i < MAX; i++)
         if (temp->child[i] != NULL)
             return true;
-            
+        
     temp->check = true;
     return false;
 }
 
 int main()
 {
-    int testcase, n;
+    int n;
     string s;
-    bool has;
-    int i = 0;
-    cin >> testcase;
-    while(testcase--)
+    cin >> n;
+    struct Node *root = newNode();
+    for (int i = 0; i < n; i++)
     {
-        struct Node *root = newNode();
-        has = false;
-        i++;
-        cin >> n;
-        for (int i = 0; i < n; i++)
+        cin >> s;
+        if (addWord(root, s))
         {
-            cin >> s;
-            //cout << has << endl;
-            if (!has)
-                has = addWord(root, s);
+            cout << "vulnerable";
+            return 0;
         }
-        cout << "Case " << i <<  ": ";
-        if (has)
-            cout << "NO\n";
-        else
-            cout << "YES\n";
     }
+    cout << "non vulnerable";
     return 0;
-}
+}   

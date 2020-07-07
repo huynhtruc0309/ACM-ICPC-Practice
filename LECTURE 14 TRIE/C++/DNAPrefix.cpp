@@ -2,7 +2,8 @@
 #include <string>
 #include <stack>
 using namespace std;
-#define MAX 26
+#define MAX 4
+
 struct Node {
     struct Node *child[MAX];
     int prefix;
@@ -25,15 +26,23 @@ void addWord(struct Node *root, string s)
 {
     int ch;
     struct Node *temp = root;
-    temp->prefix++;
     for (int i = 0; i < s.size(); i++)
     {
-        ch = s[i] - 'a';
+        if (s[i] == 'A')
+            ch = 0;
+        else if (s[i] == 'C')
+            ch = 1;
+        else if (s[i] == 'G')
+            ch = 2;
+        else if (s[i] == 'T')
+            ch = 3;
+
         if (temp->child[ch] == NULL)
         {
             temp->child[ch] = newNode(temp->level + 1);
         }
         temp = temp->child[ch];
+        temp->prefix++;
     }
 }
 
@@ -49,7 +58,9 @@ long long dfs(struct Node *root)
 	{
 		node = s.top();
 		s.pop();
-		if(node->level * node->prefix > mx) mx = node->level * node->prefix;
+		if(node->level * node->prefix > mx) 
+            mx = node->level * node->prefix;
+
 		for(int i = 0; i < MAX; i++)
 			if(node->child[i] != NULL) s.push(node->child[i]);
 	}
@@ -61,11 +72,11 @@ int main()
 {
     int testcase, n;
     string s;
-    struct Node *root = newNode(0);
     int i = 0;
     cin >> testcase;
     while(testcase--)
     {
+        struct Node *root = newNode(0);
         i++;
         cin >> n;
         for (int i = 0; i < n; i++)
@@ -73,7 +84,7 @@ int main()
             cin >> s;
             addWord(root, s);
         }
-        cout << "Case " << i <<  " : " << dfs(root) << endl;
+        cout << "Case " << i <<  ": " << dfs(root) << endl;
     }
     return 0;
 }

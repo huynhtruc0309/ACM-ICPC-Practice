@@ -73,7 +73,7 @@ bool findWord(Node *root, string s)
         {
             return false;
         }
-        temp = temp->child;
+        temp = temp->child[ch];
     }
     return temp->countWord > 0;
 }
