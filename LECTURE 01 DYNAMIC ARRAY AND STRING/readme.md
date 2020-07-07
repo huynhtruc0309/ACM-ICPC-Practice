@@ -1,3 +1,5 @@
+# DYNAMIC ARRAY AND STRING
+Lecture: https://drive.google.com/file/d/1JBxARynm8subBHm61mqeS2jXqO-k6Wur/view?fbclid=IwAR0aVtVV4LrurQoIoNaa6Y4Vf-Nu59f_9sHY2XRJoqOwjqgJ4-ismUrE0RM
 ## Thêm phần tử vào Dynamic Array
 ```
 vector<int> v;
