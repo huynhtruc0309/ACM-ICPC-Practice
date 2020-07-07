@@ -1,7 +1,8 @@
 # TRIE
+Lecture: https://drive.google.com/file/d/1ENjmt9TSWbx9wDTZJI04bjigzzcMd_rr/view?fbclid=IwAR37aAGEBG84f4wTr4c6s6vXW6ROVEHN7FrgQocg4MVvgkc_XkkaMQnrA-s
 ## Cấu trúc cây Trie
 ### C++
-```
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,7 +13,7 @@ struct Node {
 };
 ```
 ### Python
-```
+```python
 class Node:
     def __init__(self):
         self.countWord = 0
@@ -21,7 +22,7 @@ class Node:
 ## Thao tác trên cây Trie
 ### 1. Thêm từ vào cây
 ### C++
-```
+```cpp
 struct Node *newNode()
 {
     struct Node *node = new Node;
@@ -50,7 +51,7 @@ void addWord(struct Node *root, string s)
 }
 ```
 ### Python
-```
+```python
 def addWord(root, s):
     temp = root
     for ch in s:
@@ -61,7 +62,7 @@ def addWord(root, s):
 ```
 ## 2. Tìm kiếm từ trong cây
 ### C++
-```
+```cpp
 bool findWord(Node *root, string s)
 {
     int ch;
@@ -79,7 +80,7 @@ bool findWord(Node *root, string s)
 }
 ```
 ### Python
-```
+```python
 def findWord(root, s):
     temp = root
     for ch in s:
@@ -90,7 +91,7 @@ def findWord(root, s):
 ```
 ## Xoá từ trong cây
 ### C++
-```
+```cpp
 bool isWord(struct Node *node)
 {
     return (node->countWord != 0);
@@ -132,7 +133,7 @@ bool removeWord(struct node *root, string s, int level, int len)
 }
 ```
 ### Python
-```
+```python
 def isWord(node):
     return node.countWord != 0
 
@@ -159,7 +160,7 @@ def removeWord(root, s, level, len):
 ```
 ## In toàn bộ từ trong cây
 ### C++
-```
+```cpp
 void printWord(struct Node* root, string s)
 {
     if (isWord(root))
@@ -176,7 +177,7 @@ void printWord(struct Node* root, string s)
 }
 ```
 ### Python
-```
+```python
 def printWord(root, s):
     if isWord(root):
         print(s)

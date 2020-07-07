@@ -1,7 +1,8 @@
 # BINARY SEARCH
+Lecture: https://drive.google.com/file/d/1mQyh7X8nHY6OMv2efpWfGMJr0dfyZmhh/view?fbclid=IwAR2f1bAtQcOQBZrVRTs7WZcCCVtjBML69nJ_bsShv8tUt2QbSTcwExZj8jk
 ## Binary Search
 ### C++
-```
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -36,7 +37,7 @@ int main()
 }
 ```
 ### Python
-```
+```python
 def binarySearch(a, left, right, x):
     while left <= right:
         mid = left + (right - left)//2
@@ -55,7 +56,7 @@ if __name__ == '__main__':
 ```
 ## Binary Search Đệ quy
 ### C++
-```
+```cpp
 int binarySearch(const vector<int> &a, int left, int right, int x)
 {
     if (left <= right)
@@ -71,7 +72,7 @@ int binarySearch(const vector<int> &a, int left, int right, int x)
 }
 ```
 ### Python
-```
+```python
 def binarySearch(a, left, right, x):
     if left <= right:
         mid = (left + right)//2
@@ -85,7 +86,7 @@ def binarySearch(a, left, right, x):
 ## Hàm Binary Search khác cần chú ý
 #### Binary Search First (tìm phần tử đầu tiên)
 ### C++
-```
+```cpp
 int bsFirst(const vector<int> &a, int left, int right, int x)
 {
     if (left <= right)
@@ -102,7 +103,7 @@ int bsFirst(const vector<int> &a, int left, int right, int x)
 }
 ```
 ### Python
-```
+```python
 def bsFirst(a, left, right, x):
     if left <= right:
         mid = left + (right - left)//2
@@ -115,7 +116,7 @@ def bsFirst(a, left, right, x):
     return -1
 ```
 #### Binary Search Last (tìm phần tử cuối cùng)
-```
+```cpp
 int bsLast(const vector<int> &a, int left, int right, int x)
 {
     if (left <= right)
@@ -132,7 +133,7 @@ int bsLast(const vector<int> &a, int left, int right, int x)
 }
 ```
 ### Python
-```
+```python
 def bsLast(a, left, right, x):
     if left <= right:
         mid = left + (right - left)//2
@@ -146,7 +147,7 @@ def bsLast(a, left, right, x):
 ```
 ## Dùng Binary Search trong thư viện của C++/Python
 ### C++
-```
+```cpp
 int a[] = {1, 1, 2, 2, 2, 3, 4, 5, 7};
 int n = 9;
 vector<int> v(a, a + n);
@@ -154,12 +155,12 @@ int x = 3;
 bool result = binary_search(v.begin(), v.end(), x);
 ```
 ### Python
-```
-Không có
+```python
+# Không có
 ```
 ## Hàm tìm cận dưới >=
 ### C++
-```
+```cpp
 int a[] = {1, 1, 2, 2, 2, 3, 4, 5, 7};
 int n = 9;
 vector<int> v(a, a + n);
@@ -169,7 +170,7 @@ low_value = lower_bound(v.begin(), v.end(), x);
 int index = low_value - v.begin();
 ```
 ### Python
-```
+```python
 if __name__ == '__main__':
     a = [1, 1, 2, 2, 2, 3, 4, 5, 7]
     n, x = 9, 3
@@ -179,7 +180,7 @@ if __name__ == '__main__':
 ```
 ## Hàm tìm cận trên >
 ### C++
-```
+```cpp
 int a[] = {1, 1, 2, 2, 2, 3, 4, 5, 7};
 int n = 9;
 vector<int> v(a, a + n);
@@ -189,7 +190,7 @@ upp_value = upper_bound(v.begin(), v.end(), x);
 int index = upp_value - v.begin();
 ```
 ### Python
-```
+```python
 if __name__ == '__main__':
     a = [1, 1, 2, 2, 2, 3, 4, 5, 7]
     n, x = 9, 3

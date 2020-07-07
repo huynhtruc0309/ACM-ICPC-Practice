@@ -1,15 +1,15 @@
 # SORTING
 Lecture: https://drive.google.com/file/d/18H_UpxbjhH4U_4JnSbrB0Wa0t2rZ0zeb/view?fbclid=IwAR2eyFDThcehi3ZJvpz6yF3t47V6GAcsQzzVr3YprCmBdKK0gkf6-d94weE
 ## Khai báo và sử dụng
-```
+```cpp
 sort(iterator1, iterator 2, option);
 ```
 ## Sắp xếp tăng dần
-```
+```cpp
 sort(v.begin(), v.end())
 ```
 ## Sắp xếp tăng dần (viết hàm/tham số)
-```
+```cpp
 sort(v.begin(), v.end(), option);
 bool option (int a, int b)
 {
@@ -17,12 +17,12 @@ bool option (int a, int b)
 }
 ```
 ## Sắp xếp giảm dần
-```
+```cpp
 #include <functional>
 sort(v.begin(), v.end(), greater<int>());
 ```
 ## Sắp xếp giảm dần (viết hàm/ tham số)
-```
+```cpp
 sort(v.begin(), v.end(), option);
 bool option(int a, int b)
 {
@@ -30,11 +30,11 @@ bool option(int a, int b)
 }
 ```
 ## Sử dụng hàm sort để sắp xếp mảng con
-```
+```cpp
 sort(v.begin() + 1, v.begin() + 4);
 ```
 ## Khai báo cấu trúc phân số
-```
+```cpp
 struct Fraction
 {
     int num;
@@ -47,7 +47,7 @@ v.push_back(Fraction{7, 9});
 v.push_back(Fraction{1, 8});
 ```
 ## Sắp xếp mảng cấu trúc tăng dần
-```
+```cpp
 bool option(const Fraction &x, const Fraction &y)
 {
     return (double)x.num/x.denom < (double)y.num/y.denom;
@@ -55,7 +55,7 @@ bool option(const Fraction &x, const Fraction &y)
 sort(v.begin(), v.end(), option);
 ```
 ## Sắp xếp mảng cấu trúc giảm dần
-```
+```cpp
 bool option(const Fraction &x, const Fraction &y)
 {
     return (double)x.num/x.denom > (double)y.num/y.denom;
@@ -64,7 +64,7 @@ sort(v.begin(), v.end(), option);
 ```
 ## Sắp xếp cấu trúc sinh viên
 ### Cách 1
-```
+```cpp
 struct Student
 {
     int id;
@@ -95,7 +95,7 @@ int main()
 }
 ```
 ### Cách 2
-```
+```cpp
 struct Student {
     int id;
     double score;

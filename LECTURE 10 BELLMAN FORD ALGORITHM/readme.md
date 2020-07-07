@@ -1,6 +1,7 @@
 # BELLMAN FORD ALGORITHM
+Lecture: https://drive.google.com/file/d/1cz5cQonjHggEzRYZilaklK7suSE8rrNx/view?fbclid=IwAR01M1iYlTZ3voq8CiocBIeoHqPdYXBuFlq4nR55XqlTxJFIUC5Qk5vEQhs
 ## C++
-```
+``` cpp
 # include <iostream>
 # include <vector>
 # define MAX 100
@@ -70,7 +71,7 @@ int main()
 }
 ```
 ## Python
-```
+``` python
 INF = 10**9
 MAX = 105
 

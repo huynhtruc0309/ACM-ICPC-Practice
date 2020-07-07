@@ -1,6 +1,7 @@
 # FLOYD-WARSHALL ALGORITHM
+Lecture: https://drive.google.com/file/d/1b80FA-_IQZout_qJ_ozobJvXvOnghO7h/view?fbclid=IwAR3eef69Hun0PAZEoX6GMp0bFM-Vy9fnAJfzz5P4tdaHWx10jyqEeqJ_73o
 ## C++
-```
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -85,7 +86,7 @@ int main()
 }
 ```
 ## Python
-```
+```python
 MAX = 100
 INF = int(1e9)
 def printPath(s, t):

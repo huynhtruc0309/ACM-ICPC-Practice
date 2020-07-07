@@ -1,8 +1,9 @@
 # BINARY SEARCH TREE
+Lecture: https://drive.google.com/file/d/1etcI7j0vh5Ubp97cjFIsoNTR7x2UsGPf/view?fbclid=IwAR2zt8UaeO-trVF0GT4oSS1kKzT54uk9WATcD1QSz0lsruPcYfolqMINMQ4
 ## 0. Khai báo cấu trúc một node trong BST
 #### Độ phức tạp: O(1)
 ### C++
-```
+```cpp
 struct Node
 {
     int key;
@@ -11,7 +12,7 @@ struct Node
 }
 ```
 ### Python
-```
+```python
 class Node:
     def __init__(self):
         self.key = 0
@@ -21,7 +22,7 @@ class Node:
 ## 1. Tạo một node mới
 #### Độ phức tạp: O(1)
 ### C++
-```
+```cpp
 Node* createNode(int x)
 {
     Node *newNode = new Node;
@@ -31,7 +32,7 @@ Node* createNode(int x)
 }
 ```
 ### Python
-```
+```python
 def createNode(x):
     newNode = Node()
     newNode.key = x
@@ -40,7 +41,7 @@ def createNode(x):
 ## 2. Chèn một giá trị mới vào BST
 #### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
-```
+```cpp
 Node* createNode(Node* root, int x)
 {
     if (root == NULL)
@@ -53,7 +54,7 @@ Node* createNode(Node* root, int x)
 }
 ```
 ### Python
-```
+```python
 def insertNode(root, x):
     if root == None:
         return createNode(x)
@@ -66,7 +67,7 @@ def insertNode(root, x):
 ## 3. Tạo Binary Search Tree
 #### Độ phức tạp: O(N*h) với h là chiều cao cây
 ### C++
-```
+```cpp
 void createTree(Node* &root, int a[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -74,7 +75,7 @@ void createTree(Node* &root, int a[], int n)
 }
 ```
 ### Python
-```
+```python
 def createTree(a, n):
     root = None
     for i in range(n):
@@ -84,7 +85,7 @@ def createTree(a, n):
 ## 4. Tìm kiếm một giá trị trong BST
 #### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
-```
+```cpp
 Node* searchNode(Node *root, int x)
 {
     if (root == NULL || root->key == x)
@@ -95,7 +96,7 @@ Node* searchNode(Node *root, int x)
 }
 ```
 ### Python
-```
+```python
 def searchNode(root, x):
     if root == None or root.key == x:
         return root
@@ -106,7 +107,7 @@ def searchNode(root, x):
 ## 5. Xóa một giá trị trong BST
 #### Độ phức tạp: O(h) với h là chiều cao cây (Lưu ý: worst case O(n))
 ### C++
-```
+```cpp
 Node* deleteNode(Node* &root, int x)
 {
     if (root == NULL)
@@ -147,7 +148,7 @@ Node* minValueNode(Node* node)
 }
 ```
 ### Python
-```
+```python
 def deleteNode(root, x):
     if root == None:
         return root
@@ -179,7 +180,7 @@ def minValueNode(node):
 ## 6. Duyệt Binary Search Tree
 #### Độ phức tạp: O(N)
 ### C++
-```
+```cpp
 void traversalTree(Node *root)
 {
     if (root != NULL)
@@ -191,7 +192,7 @@ void traversalTree(Node *root)
 }
 ```
 ### Python
-```
+```python
 def traversalTree(root):
     if root != None:
         traversalTree(root.left)
@@ -201,7 +202,7 @@ def traversalTree(root):
 ## 7. Tính kích thước của BST
 #### Độ phức tạp: O(N)
 ### C++
-```
+```cpp
 int size(Node *node)
 {
     if (node == NULL)
@@ -211,7 +212,7 @@ int size(Node *node)
 }
 ```
 ### Python
-```
+```python
 def size(root):
     if root == None:
         return 0
@@ -220,7 +221,7 @@ def size(root):
 ## 8. Xoá Binary Search Tree
 #### Độ phức tạp: O(N)
 ### C++
-```
+```cpp
 void deleteTree(Node* root)
 {
     if (root == NULL)
@@ -231,7 +232,7 @@ void deleteTree(Node* root)
 }
 ```
 ### Python
-```
+```python
 def deleteTree(root):
     if root == None:
         return
@@ -242,7 +243,7 @@ def deleteTree(root):
 # Sử dụng Binary Search Tree bằng thư viện
 ## Cách sử dụng set và map
 ### C++
-```
+```cpp
 #include <set>
 using namespace std;
 
@@ -263,7 +264,7 @@ else
 //Xoá phần tử
 s.erase(20);
 ```
-```
+```cpp
 #include <map>
 using namespace std;
 
@@ -288,45 +289,45 @@ else
 m.erase(14);
 ```
 ## Hàm tìm cận dưới
-```
+```cpp
 set <int>::iterator it;
 it = s.lower_bound(29);
 cout << *it;
 ```
-```
+```cpp
 map<int, string>::iterator it;
 it = s.lower_bound(14);
 cout << it->first << " " << it->second;
 ```
 ## Hàm tìm cận trên >
-```
+```cpp
 set <int>::iterator it;
 it = s.upper_bound(29);
 cout << *it;
 ```
-```
+```cpp
 map<int, string>::iterator it;
 it = s.upper_bound(14);
 cout << it->first << " " << it->second;
 ```
 ## Duyệt các phần tử của set và map
-```
+```cpp
 set<int>::iterator it;
 for (it = s.begin(); it != s.end(); it++)
     cout << *it << ", ";
 ```
-```
+```cpp
 map<int, string>::iterator it;
 for (it = m.begin(); it != m.end(); it++)
     cout << it->first << " " << it->second << ", ";
 ```
 ## Duyệt ngược các phần tử của set và map
-```
+```cpp
 set<int>::reverse_iterator it;
 for (it = s.rbegin(); it != s.rend(); it++)
     cout << *it << ", ";
 ```
-```
+```cpp
 map<int, string>::reverse_iterator it;
 for (it = m.rbegin(); it != m.rend(); it++)
     cout << it->first << " " << it->second << ", ";
