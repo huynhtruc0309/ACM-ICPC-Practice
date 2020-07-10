@@ -1,12 +1,9 @@
-# PRIM'S ALGORITHM
-Lecture: https://drive.google.com/file/d/1Ne26m5PAa9RUPdbaPtOEoWI80XbHlISV/view
-## C++
-```cpp
 #include <iostream>
 #include <algorithm>
 #include <string>
 #include <vector>
 #include <queue>
+#include <string.h>
 #include <functional>
 using namespace std;
 #define MAX 100
@@ -17,7 +14,7 @@ int path[MAX];
 bool visited[MAX];
 int N, M;
 
-void printMST()
+int printMST()
 {
     int ans = 0;
     for (int i = 0; i < N; i++)
@@ -25,17 +22,18 @@ void printMST()
         if (path[i] == -1)
             continue;
         ans += dist[i];
-        cout << path[i] << " - " << i << ": " << dist[i] << endl;
     }
-    cout << "Weight of MST: " << ans << endl;
+    return ans;
 }
+
 struct option
 {
     bool operator() (const pair<int, int> &a, const pair<int, int> &b) const
     {
         return a.second > b.second;
     }
-}
+};
+
 void prims(int src)
 {
     priority_queue<pair<int, int>, vector<pair<int, int>>, option> pq;
@@ -68,22 +66,10 @@ int main()
     {
         cin >> u >> v >> w;
         graph[u].push_back(make_pair(v, w));
-        graph[v].push_back(make_pari(u, w));
+        graph[v].push_back(make_pair(u, w));
     }
     int s = 0;
     prims(s);
-    printMST();
+    cout << printMST();
     return 0;
 }
-```
-## Python
-```
-def prims(src):
-    pq = queue.PriorityQueue()
-    pq.put
-```
-
-
-
-
-
