@@ -38,28 +38,30 @@ int unionSet(int u, int v)
     }
     return 0;
 }
+bool isConnect(int x1, int y1, int x2, int y2)
+{
+    return x1 == x2 || y1 == y2;
+}
+
 int main()
 {
-    int T, u, v, ans, n;
-    string s;
-    scanf("%d\n\n", &T);
-    while(T--)
+    int n, x, y, ans = 0;
+    cin >> n;
+    cin >> x >> y;
+    makeSet();
+    for (int i = 1; i < n; i++)
     {
-        getline(cin, s);
-        makeSet();
-        n = s[0] - 'A' + 1;
-        ans = n;
-        while(1)
-        {
-            if (!getline(cin, s) || s.empty())
-                break;
-            u = s[0] - 'A';
-            v = s[1] - 'A';
-            ans -= unionSet(u, v);
-        }
-        cout << ans << endl;
-        if (T)
-            cout << endl;
+        cin >> x >> y;
+        unionSet();
     }
+    for (int i = 0; i < n; i++)
+    {
+        if (parent[i] == i)
+            ans++;
+    }
+    ans--;
+
+    cout << ans;
+
     return 0;
 }
