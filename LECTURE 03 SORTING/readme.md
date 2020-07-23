@@ -1,5 +1,4 @@
 # SORTING
-Lecture: https://drive.google.com/file/d/18H_UpxbjhH4U_4JnSbrB0Wa0t2rZ0zeb/view?fbclid=IwAR2eyFDThcehi3ZJvpz6yF3t47V6GAcsQzzVr3YprCmBdKK0gkf6-d94weE
 ## Khai báo và sử dụng
 ```cpp
 sort(iterator1, iterator 2, option);

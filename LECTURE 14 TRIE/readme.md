@@ -1,5 +1,4 @@
 # TRIE
-Lecture: https://drive.google.com/file/d/1ENjmt9TSWbx9wDTZJI04bjigzzcMd_rr/view?fbclid=IwAR37aAGEBG84f4wTr4c6s6vXW6ROVEHN7FrgQocg4MVvgkc_XkkaMQnrA-s
 ## Cấu trúc cây Trie
 ### C++
 ```cpp

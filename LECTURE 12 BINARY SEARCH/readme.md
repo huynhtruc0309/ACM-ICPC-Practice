@@ -1,5 +1,4 @@
 # BINARY SEARCH
-Lecture: https://drive.google.com/file/d/1mQyh7X8nHY6OMv2efpWfGMJr0dfyZmhh/view?fbclid=IwAR2f1bAtQcOQBZrVRTs7WZcCCVtjBML69nJ_bsShv8tUt2QbSTcwExZj8jk
 ## Binary Search
 ### C++
 ```cpp

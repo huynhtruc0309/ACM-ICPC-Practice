@@ -1,5 +1,4 @@
 # BINARY SEARCH TREE
-Lecture: https://drive.google.com/file/d/1etcI7j0vh5Ubp97cjFIsoNTR7x2UsGPf/view?fbclid=IwAR2zt8UaeO-trVF0GT4oSS1kKzT54uk9WATcD1QSz0lsruPcYfolqMINMQ4
 ## 0. Khai báo cấu trúc một node trong BST
 #### Độ phức tạp: O(1)
 ### C++

@@ -1,5 +1,4 @@
 # HEAP
-Lecture: https://drive.google.com/file/d/11JpeLLgKEBhS6iSeiMtDkdIW6JO9tMJy/view?fbclid=IwAR2WSq76962bcV9Pf71Enj7TxFZRnjfocMFH93O52RfAWEBo784nm0Y1mUc
 ## Xây dựng cây Min-heap
 ```cpp
 vector<int> h;

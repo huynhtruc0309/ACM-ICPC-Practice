@@ -1,5 +1,4 @@
 # STACK
-Lecture: https://drive.google.com/file/d/1-2JR9nZkJJqGL7Jas9Gtd5n3F--KUZLQ/view
 ## Cách khai báo và sử dụng
 ### C++
 ``` cpp

@@ -1,5 +1,4 @@
 # PRIM'S ALGORITHM
-Lecture: https://drive.google.com/file/d/1Ne26m5PAa9RUPdbaPtOEoWI80XbHlISV/view
 ## C++
 ```cpp
 #include <iostream>
